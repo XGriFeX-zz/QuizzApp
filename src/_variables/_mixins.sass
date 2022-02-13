@@ -1,0 +1,20 @@
+@import "./_variables"
+
+@mixin activeLink($bg, $bx-s: true, $active: true )
+    color: #fff
+    background: $bg
+    transition: .2s all
+    cursor: pointer
+    border: none
+    border-radius: $radius
+    transition: .2s all
+    @if $bx-s
+        box-shadow: 0 4px 0 0 $dark
+    @else
+        &:hover
+            background: $dark
+    @if $active
+        &:active
+            transform: translateY(5px)
+            box-shadow: none
+        

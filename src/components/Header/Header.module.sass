@@ -1,0 +1,38 @@
+@import "../../_variables/_variables"
+@import "../../_variables/_mixins"
+
+.header__main
+    width: 100vw
+    height: 80px
+    border-bottom: 2px solid #f2f2f2
+    font-size: 16px
+    .link__hover
+        color: $text-color
+        transition: .2s all
+        padding: 8px 10px
+        border-radius: $radius
+        &:hover
+            background: #fff6e6
+
+    &__navbar
+        height: 100%
+        display: flex
+        justify-content: space-around
+        align-items: center
+        &__tabs
+            display: flex
+            align-items: center
+            gap: 10px
+            &__logo
+                img
+                    max-width: 110px
+                    height: 100%
+                    object-fit: contain
+    &__right
+        display: flex
+        align-items: center
+        gap: 15px
+        .signup
+            @include activeLink($primary-color, false)
+            padding: 12px 24px
+

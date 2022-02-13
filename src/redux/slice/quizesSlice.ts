@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { IInitialState, IQuize } from "../reducerTypes/type"
+import { IInitialState, IQuiz } from "../reducerTypes/type"
 
 
 const initialState: IInitialState = {
@@ -10,7 +10,7 @@ const quizesSlice = createSlice({
     name: "quizzes",
     initialState,
     reducers: {
-        setQuizzes: (state, action: PayloadAction<IQuize[]>) => {
+        setQuizzes: (state, action: PayloadAction<IQuiz[]>) => {
             state.quizzes = action.payload
         }
     },

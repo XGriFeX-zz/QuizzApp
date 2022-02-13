@@ -1,16 +1,24 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IQuize } from '../redux/reducerTypes/type'
+import { IQuiz } from '../redux/reducerTypes/type'
 
-const _url = "http://localhost:8080"
+const _url = "https://quiz-app-backend-api.herokuapp.com/api/quizzes"
 
 export const quizzesAPI = createApi({
     reducerPath: "quizzesAPI",
     baseQuery: fetchBaseQuery({baseUrl: _url}),
+    tagTypes: ["addQuiz"],
     endpoints: (build) => ({
-        fetchAllQuizes: build.query<IQuize[], string>({
-            query: () => ({
-                url: "/quizzes"
-            })
+        fetchAllQuizes: build.query<IQuiz[], string>({
+            query: () => "quizzes",
+            providesTags: result => ["addQuiz"]
+        }),
+        createQuiz: build.mutation<IQuiz, IQuiz>({
+            query: (quiz) => ({
+                url: "/quizzes",
+                method: "POST",
+                body: quiz
+            }),
+            invalidatesTags: ["addQuiz"]
         })
     })
 })

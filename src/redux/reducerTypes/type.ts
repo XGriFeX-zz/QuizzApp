@@ -1,11 +1,11 @@
 
-export interface IQuize {
-    id: number
+export interface IQuiz {
+    id?: number
     title: string
-    img: string
+    picture: string
     tag: string
 }
 
 export interface IInitialState {
-    quizzes: IQuize[]
+    quizzes: IQuiz[]
 }
