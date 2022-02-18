@@ -7,8 +7,8 @@ import NotFound from "./pages/NotFound/NotFound"
 import "./App.sass"
 
 const App: FC = () => {
-  // const { data } = quizzesAPI.useFetchAllQuizesQuery("")
-  // const [ createQuiz, {} ] = quizzesAPI.useCreateQuizMutation()
+  const { data } = quizzesAPI.useFetchAllQuizesQuery("")
+  const [ createQuiz, {} ] = quizzesAPI.useCreateQuizMutation()
 
   return (
     <Routes>
