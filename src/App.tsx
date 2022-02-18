@@ -10,6 +10,8 @@ const App: FC = () => {
   // const { data } = quizzesAPI.useFetchAllQuizesQuery("")
   // const [ createQuiz, {} ] = quizzesAPI.useCreateQuizMutation()
 
+  console.log("HELLO MAIN PAGE")
+
   return (
     <Routes>
       <Route path="/" element={<Header/>}></Route>
